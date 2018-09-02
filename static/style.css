@@ -1,0 +1,72 @@
+body {
+    background-color: white;
+    position: center;
+}
+h1 {
+    color: #0a4922;
+    position: center;
+}
+p {
+    color: #41f474;
+    position: center;
+}
+a {
+    color: #41f474;
+    position: center;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    position: center;
+}
+input[type=text] input[type=date] input[type=file] {
+	padding-left:50%;
+	padding-right: 50%;
+    background-color: #f4c784;
+    float:left;
+    padding:2px 2px;
+    width: 75%;
+    position: center;
+}
+.dataframe{
+	font-family: "Times New Roman", Times, serif;
+    width:100%;
+    border: none;
+	border-bottom: 1px solid #C8C8C8;
+	border-collapse: collapse;
+	text-align:left;
+	padding: 20px;
+	margin-bottom: 40px;
+	font-size: 30px;
+	background-color: #77dd77;
+	color: white;
+
+}
+.dataframe th, .dataframe td{
+    font-family: "Times New Roman", Times, serif;
+    width: 2000 px;
+    border: none;
+    border-bottom: 1px solid #C8C8C8;
+    border-collapse: collapse;
+    text-align:left;
+    padding: 20px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    background-color: #77dd77;
+    color: white;
+}
+.dataframe th{
+    background-color: orange;
+}
+tr:nth-child(odd){
+	background-color:#eee; 
+}
+tr:nth-child(even){ 
+	background-color:#fff; 
+}
+tr:hover{ 
+	background-color: #ffff99;
+}

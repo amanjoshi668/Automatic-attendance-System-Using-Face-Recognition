@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+ 
+<html>
+<head>
+    <script src = "{{url_for('static', filename='d3.min.js')}}"></script>
+    <script src = "{{url_for('static', filename='jquery.js')}}"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style.css') }}">
+	<title>Attendence</title>
+</head>
+<body>
+	<h1 align="center">Welcome to Attendence Manager</h1>
+    {% if logged_in == "True" %}
+        <a href="/new_home"><button type="button" class="btn btn-info btn-lg">Home</button></a>
+    {%else%}
+        <a href="/"><button type="button" class="btn btn-info btn-lg">Home</button></a>
+    {%endif%}
+    <table width="100%">
+        <tr>
+            <td><h2>Course Name : {{course_name}}</h2></td>
+            <td><h2>Professor Name : {{prof_name}}</h2></div></td>
+        </tr>
+    </table>
+    <div id="GRAPH"></div>
+    <div class=page>
+        {{ table|safe }}
+    </div>
+</body>
+
+<footer>
+    <script src = "{{url_for('static', filename='plotly-latest.min.js')}}"></script>
+    <script src = "{{url_for('static', filename='d3.min.js')}}"></script>
+    <script src = "{{url_for('static', filename='jquery.js')}}"></script>
+    
+    <script type="text/javascript">
+        var graphs = {{graphJSON | safe}};
+        var ids = {{id | safe}};
+        Plotly.plot('GRAPH',graphs[0].data,graphs[0].layout);
+    </script>
+</footer>
+
+</html>

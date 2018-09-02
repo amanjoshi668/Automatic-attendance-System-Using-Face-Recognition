@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+ 
+<html>
+
+<head>
+
+	<script src = "{{url_for('static', filename='d3.min.js')}}"></script>
+    <script src = "{{url_for('static', filename='jquery.js')}}"></script>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<title>Home Page</title>
+</head>
+<body>
+	<div>
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">Final Year Project</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+		      	<li class="active"><a href="/">Home</a></li>
+				<li><a href="/hello">Add Student</a></li>
+				<li><a href="/add_course">Add Course</a></li>
+				<li><a href="/attendence">Show Attendence</a></li>
+				<li><a href="/add_stud_course">Add Courses for Student</a></li>
+				<li><a href="/video">Take Attendence</a></li>
+		    </ul>
+		    <ul class="nav navbar-nav navbar-right">
+		      <li><a href="/logout">Logout</a></li>
+		    </ul>
+		  </div>
+		</nav>
+	</div>
+	<h1>Enter Details of the Student</h1>
+	<form action = "/hello" method="POST" enctype="multipart/form-data">
+	<table border="40" border-collapse="separate" border-color="white"><tr><td>Name </td><td><input type="text" name="name"></td></tr>
+		<tr><td>Id </td><td><input type="text" name="id"></td></tr>
+		<tr><td>Photo 1</td><td><input type="file" name="file1" /></td></tr>
+		<tr><td>Photo 2</td><td><input type="file" name="file2" /></td></tr>
+		<tr><td>Photo 3</td><td><input type="file" name="file3" /></td></tr>
+		<tr><td><input type="submit"/></td></tr>
+	</table>
+	</form>
+</body>
+</html>

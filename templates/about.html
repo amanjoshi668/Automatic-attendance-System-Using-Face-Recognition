@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+ 
+<html>
+
+<head>
+
+	<script src = "{{url_for('static', filename='d3.min.js')}}"></script>
+    <script src = "{{url_for('static', filename='jquery.js')}}"></script>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	<title>Home Page</title>
+</head>
+<body>
+<!--	<h1>Welcome to Attendence Manager</h1>
+	<a href="/hello">Add Student</a>
+	<a href="/details">Details</a>
+	<a href="/add_course">Add Course</a>
+	<a href="/add_stud_course">Add Student's Course</a>
+	<a href="/video">Take Attendence</a>
+	<a href="/attendence">Show Attendence</a>-->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Final Year Project</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class=""><a href="/">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/proj">Project Details</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class='jumbotron'>
+	<p align="center" style="font-size: 40px; padding-top: 30px;">ATTENDANCE SYSTEM USING FACE RECOGNITION</p>
+</div>
+
+<div class='jumbotron'>
+	<h1 align="center">PROJECT UNDER</h1>
+	<div class='col'>
+		<div align="center"><img src="{{ url_for('static', filename='sir.jpg')}}" width="300px" height="300px" align="center" class="img-circle"></div>
+		<div><h1 align="center">Professor S.D.SAMANTARAY</h1></div>
+	</div> 
+</div>
+<br><br><br>
+<div class='row' >
+	<div class='col-sm-3 col-md-3 col-lg-3 col'>
+		<div><img src="{{ url_for('static', filename='aman.jpg')}}" width="300px" height=300px class="img-circle"></div>
+		<div align="center"><h1>Aman Joshi</h1></div>
+		<div align="center"><h2>ID No:46631</h2></div>
+	</div>
+	<div class='col-sm-3 col-md-3 col-lg-3 col'>
+		<div><img src="{{ url_for('static', filename='chetan.jpg')}}" width="300px" height=300px class="img-circle"></div>
+		<div align="center"><h1>Chetan Joshi</h1></div>
+		<div align="center"><h2>ID No:46630</h2></div>
+	</div>
+	<div class='col-sm-3 col-md-3 col-lg-3 col'>
+		<div><img src="{{ url_for('static', filename='anurag.jpg')}}" width="300px" height=300px class="img-circle"></div>
+		<div align="center"><h1>Anurag Maithani</h1></div>
+		<div align="center"><h2>ID No:46638</h2></div>
+	</div>
+	<div class='col-sm-3 col-md-3 col-lg-3 col'>
+		<div><img src="{{ url_for('static', filename='shobhit.jpg')}}" width="300px" height=300px class="img-circle"></div>
+		<div align="center"><h1>Shobhit Joshi</h1></div>
+		<div align="center"><h2>ID No:46618</h2></div>
+	</div>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

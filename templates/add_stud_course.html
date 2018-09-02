@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+ 
+<html>
+<head>
+	<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style.css') }}">
+	<title>Take Attendence</title>
+</head>
+<body>
+	<h1>Add Student Course</h1>
+	<form action = "/add_stud_course" method="POST" enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td>Select Id</td>
+				<td>
+					<select name = "id">
+				    	{% for id in ids %}
+				    	<option value= "{{id}}" SELECTED>{{id}}</option>"
+				    	{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr>		
+				<td>Select Course</td>
+				<td>
+					<select multiple name = "selected_courses">
+				    	{% for course in courses %}
+					    <option value= "{{course}}" SELECTED>{{course}}</option>"
+				    	{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr><td><p><input type="submit"/></p></td></tr>
+		</table>
+	</form>
+	<button><a href="/new_home">go home</a></button>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+ 
+<html>
+
+<head>
+
+	<script src = "{{url_for('static', filename='d3.min.js')}}"></script>
+    <script src = "{{url_for('static', filename='jquery.js')}}"></script>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<title>Home Page</title>
+</head>
+<body>
+<div>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Attendance Manager</a>
+	    </div>
+	    <<ul class="nav navbar-nav">
+	      <li><a href="/details">Details</a></li>
+		  <li><a data-toggle="modal" data-target="#myModal4">Show Attendence</a></button></li>
+	      <li><a href="/about">About Us</a></li>
+      	  <li><a href="/proj">Project Details</a></li>
+	    </ul>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Signup</button></li>
+	      <li><button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal1">Login</button></li>
+	    </ul>
+	  </div>
+	</nav>
+</div>
+<div>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	  <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+	  {% if messages %}
+	    {% for category, message in messages %}
+	      <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+	      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	      <!-- <strong>Title</strong> --> {{ message }}
+	      </div>
+	    {% endfor %}
+	  {% endif %}
+	{% endwith %}
+</div>
+<div class='jumbotron'>
+	<img src="{{ url_for('static', filename='01.jpg')}}" height='100%' width="100%">
+</div>
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Signup</h4>
+        </div>
+        <div class="modal-body">
+          <form action = "/" method="POST">
+			<table >
+				<input type="hidden" name="find" value="signup">
+				<tr><td>Username </td><td><input type='text' name='username'></td></tr>	
+				<tr><td>First Name</td><td><input type='text' name='first_name'></td></tr>
+				<tr><td>Last Name</td><td><input type='text' name='last_name'></td></tr>
+				<tr><td>Identification Number></td><td><input type='text' name='id_no'></td></tr>
+				<tr><td>Passowrd </td><td><input type='password' name='password'></td></tr>
+				<tr><td>Confirm Password </td><td><input type='password' name='c_password'></td><tr>
+				<tr><td><p><input type="submit"/></p></td></tr>
+			</table>
+		</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Signup</h4>
+        </div>
+        <div class="modal-body">
+          <form action = "/" method="POST">
+			<input type="hidden" name="find" value="login">
+			<table >
+				<tr><td>Username </td><td><input type='text' name='username'></td></tr>	
+				<tr><td>Passowrd </td><td><input type='password' name='password'></td></tr>
+				<tr><td><p><input type="submit"/></p></td></tr>
+			</table>
+		</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Enter Course details</h4>
+        </div>
+        <div class="modal-body">
+			<form action = "/show_attendence" method="POST">
+				<table>
+					<tr>
+						<td>Select Course</td>
+						<td>
+							<select name = "selected_course">
+							    {% for course in courses %}
+					    		<option value= "{{course}}" SELECTED>{{course}}</option>"
+					    		{% endfor %}
+							</select>
+						</td>
+					</tr>
+					<tr><td><input type="submit"/></td></tr>
+				</table>
+			</form>
+		</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+	    </div>
+	  </div>
+</body>
+</html>
